@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            const numbers = [1, 2, 5, 10, 15, 25, 32, 'Jack', 64];
+            const sumEven = (arr) => {
+                const filter = arr.filter(element => element % 2 === 0)
+                let sum = 0;
+                filter.forEach((element,index) => sum += element);
+                return sum;
+            }
+            console.log(sumEven(numbers));
+        </script>
+    </body>
+</html>

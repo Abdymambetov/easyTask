@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            const startGame = () => {
+                let stopGame = true;
+                let lives = Number(prompt('Сколько жизней вы хотите?'));
+                if (lives >= 8) {
+                    alert('Слишком много, выберите число поменьше');
+                    return false;
+                }
+                if (lives < 1 || lives % 1 !== 0) return false;
+                while (stopGame) {
+                    const randomNumber = Math.floor(Math.random() * 6 + 1);
+                    console.log(randomNumber);
+                    const user = prompt('Угадай цифру от 1 до 7\n' + 'Осталось жизней: ' + lives);
+                    if (user === null) {
+                        stopGame = false;
+                        return false
+                    }
+                    if (user < 1 || user > 7 || user.trim() === '')
+                        return false;
+                    if (randomNumber === +user) {
+                        alert('Вы угадали!\n' + 'Я загадал: ' + randomNumber);
+                        return false;
+                    }
+                    else lives--;
+                    if (lives === 0) {
+                        alert('Твои жизни на нуле\n' + 'Ты продул, лошара!');
+                        return stopGame = false;
+                    }
+                }
+            }
+            while (startGame() === false) {
+                const play = confirm('Сыграешь со мной еще раз?\nЕсли ты конечно же не струсил');
+                if (!play) break;
+            }
+        </script>
+    </body>
+</html>

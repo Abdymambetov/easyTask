@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            const salaries = {
+              "Vasiliy": 100,
+              "Piotr": 300,
+              "Daria": 250,
+              "isPaid": false
+            };
+            let sum = 0;
+            for (let obj in salaries) {
+                let objContent = salaries[obj];
+                if (!isNaN(objContent))
+                    sum -= objContent;
+            }
+            console.log(sum);
+
+
+
+
+        </script>
+    </body>
+</html>
